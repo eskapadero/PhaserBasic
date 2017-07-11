@@ -1,4 +1,4 @@
 {"response_code":0,"results":[{"category": "Entertainment: Television","type":"multiple","difficulty":"medium","question":"What is the setting of the show &quot;Parks and Recreation&quot;?","correct_answer":"Pawnee, Indiana","incorrect_answers":["Eagleton, Indiana","Pasadena, California","London, England"]}],
-"response_code":1,"results":[{"category": "Entertainment: Television","type":"multiple","difficulty":"medium","question":"HEllo&quot;Parks and Recreation&quot;?","correct_answer":"Pawnee, Indiana","incorrect_answers":["Eagleton, Indiana","Pasadena, California","London, England"]}]
+"response_code":0,"results":[{"category": "Entertainment: Television","type":"multiple","difficulty":"medium","question":"HEllo&quot;Parks and Recreation&quot;?","correct_answer":"Pawnee, Indiana","incorrect_answers":["Eagleton, Indiana","Pasadena, California","London, England"]}]
 
 }
