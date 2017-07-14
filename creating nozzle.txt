@@ -1,0 +1,77 @@
+//CREATING NOZZ ON VERTICAL VESSELS
+
+
+new nozz /name of nozz
+catref /300lb_Ansi_Flanged/AAZFBD0ZZ
+hei of nozz
+pos x, y, z with respect to equipment origin (make sure u set equipment origin)
+by w (value of height)
+rot by 90 about z thro p2
+
+new nozz /C-1101_TEST:N3
+catref /300lb_Ansi_Flanged/AAZFBD0NN
+hei 838mm
+by w838
+pos W0 N0 U4490 wrt /C-1101_TEST
+rot by 210 about z thro p2
+
+//EXCEL
+Sub CreateNOzz()
+
+Dim fs
+Dim aRange As Range
+Dim z As String
+Dim p As String
+p = ""
+
+
+
+
+Dim nozzName As String
+Dim equiName As String
+Dim catref As String
+Dim clCenter As String
+Dim xPos As String
+Dim yPos As String
+Dim zPos As String
+Dim angle As String
+
+Set fs = CreateObject("Scripting.FileSystemObject")
+    Set a = fs.CreateTextFile("c:\Temp\testfile.txt", True)
+
+For Each aRange In Range("A4:A100")
+    If aRange.Value <> "" Then
+    
+    nozzName = aRange.Offset(0, 1).Value
+    catref = aRange.Offset(0, 4).Value
+    equiName = aRange.Value
+    clCenter = aRange.Offset(0, 5).Value
+    xPos = aRange.Offset(0, 6).Value
+    yPos = aRange.Offset(0, 7).Value
+    zPos = aRange.Offset(0, 8).Value
+    angle = aRange.Offset(0, 9).Value
+    
+        z = "new nozz /" & nozzName & " "
+        z = z & " " & catref & " "
+        z = z & " " & "hei " & clCenter & " "
+        z = z & " " & "pos w" & xPos & " n" & yPos & " u" & zPos & " wrt /" & equiName & " "
+        z = z & " " & "by w" & clCenter & " "
+        z = z & " " & "rot by " & angle & "about z thro p2"
+       
+        p = p + z & vbCrLf
+        
+      
+        
+    
+    
+    End If
+        
+Next
+a.WriteLine (p)
+    a.Close
+
+
+
+End Sub
+
+Function Sc()
